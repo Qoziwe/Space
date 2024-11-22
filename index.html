@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./images/favicon.ico" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+    </style>
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
+    <title>Beyound The Stars</title>
+  </head>
+  <body>
+    <section id="readme">
+      <h1>Введение по сайту</h1>
+      <p>
+        ●
+        <b style="color: red"
+          >Функционал сайта будет полностью раскрываться только в случае если
+          открыт порт Live Server</b
+        >, на сайте представлены 3D модели планет и других объектов, для их
+        отображения необходимо включить Live Server
+      </p>
+      <p>
+        Абсолютно <b style="color: red">все кнопки сайта кликабельны</b>, кроме
+        кнопок "I already have an account" и "Sign Up" на странице регистрации,
+        в случае если сайт будет подвисать или планеты будут в плохом качестве
+        или их вообще не будет, рекомендуется перезапустить браузер
+      </p>
+      <p>
+        ● Навигация по сайту осуществляется с помощью ссылок в шапке и по
+        стрелкам на сайте, а также с помощью колесика мыши.
+      </p>
+      <p>
+        ● В первой секции сайта имеется возможность
+        <b style="color: red">нажать на планету</b> и просмотреть выбранную
+        планету в увеличенном масштабе и
+        <b style="color: red">рассмотреть ее</b> с разных ракурсов(управление
+        идет с помощью левой кнопки мыши)
+      </p>
+      <p>
+        ● Во второй секции
+        <b style="color: red">переключение планет</b> осуществляется с помощью
+        стрелок влево и вправо находящихся на сайте (<>)
+      </p>
+      <p>
+        В третьей секции с миссиями, вы можете<b style="color: red">
+          выбирать статью</b
+        >
+        двумя свособами: 1 - выбрать статью на панели слева, 2 - выбрать стать.
+        стрелками (<>)
+      </p>
+      <p>
+        ● На сайте также присутсвует звуковое сопровождение - музыкальное и по
+        событиям,
+        <b style="color: red">Нажмите на кнопку для включения атмосферы</b>
+        <button id="music_agree_button">Активировать музыку</button>
+      </p>
+      <br />
+      <p>Приятного времяпровождения</p>
+      <button id="readme_button">Продолжить</button>
+    </section>
+    <section id="welcome_page">
+      <header id="welcome_page_header">
+        <img src="./images/logo.png" alt="" />
+        <h2 id="nowSection">Home</h2>
+        <div id="welcome_page_header_links">
+          <a
+            href="./index.html#welcome_page"
+            class="header_links"
+            onclick="allTransitionSound(), nowSection('Home')"
+            >Home</a
+          >
+          <a
+            href="./index.html#planets"
+            class="header_links"
+            id="link"
+            onclick="allTransitionSound(), nowSection('Planets')"
+            >Planets</a
+          ><a
+            href="./index.html#missions"
+            class="header_links"
+            onclick="allTransitionSound(), nowSection('Missions')"
+            >Missions</a
+          ><a
+            href="./index.html#future"
+            class="header_links"
+            onclick="allTransitionSound(), nowSection('Future')"
+            >The future of Space</a
+          >
+        </div>
+        <div
+          id="welcome_page_header_registration"
+          onclick="allTransitionSound(), regPageTransit()"
+        >
+          <p>Registration ㅤ\</p>
+          <img src="/images/authorization.png" alt="" style="width: 0.8vw" />
+          <p>/ ㅤAuthorization</p>
+        </div>
+      </header>
+      <div id="welcome_page_banner">
+        <h1>Solar System</h1>
+        <p>Click on the planet to enlarge</p>
+        <div id="welcome_page_banner_planets">
+          <div class="welcome_page_banner_planet" id="1">
+            <model-viewer
+              src="./3dModels/Sun.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="1562deg 81.43deg 2029m"
+              field-of-view="30deg"
+              style="width: 30vw; height: 30vw"
+              auto-rotate
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="2">
+            <model-viewer
+              src="./3dModels/mercury.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1765deg 86.43deg 54.24m"
+              field-of-view="30deg"
+              style="width: 5vw; height: 5vw"
+              auto-rotate
+              id="mercury-model"
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="3">
+            <model-viewer
+              src="./3dModels/venus.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1701deg 82.86deg 4.057m"
+              field-of-view="30deg"
+              style="width: 7vw; height: 7vw"
+              id="venus-model"
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="4">
+            <model-viewer
+              src="./3dModels/earth.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="1480deg 68.92deg 17310m"
+              field-of-view="30deg"
+              style="width: 9vw; height: 9vw"
+              auto-rotate
+              id="earth-model"
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="5">
+            <model-viewer
+              src="./3dModels/mars.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1648deg 77.86deg 4.047m"
+              field-of-view="30deg"
+              style="width: 7vw; height: 7vw"
+              id="mars-model"
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="6">
+            <model-viewer
+              src="./3dModels/jupiter.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1481deg 86.44deg 4.057m"
+              field-of-view="30deg"
+              style="width: 14vw; height: 14vw"
+              id="jupiter-model"
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="7">
+            <model-viewer
+              src="./3dModels/saturn.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1410deg 85.42deg 630.3m"
+              field-of-view="30deg"
+              style="width: 25vw; height: 13vw"
+              id="saturn-model"
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="8">
+            <model-viewer
+              src="./3dModels/uranus.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="113.3deg 73.62deg 2030m"
+              field-of-view="30deg"
+              auto-rotate
+              style="width: 9vw; height: 9vw"
+              id="uranus-model"
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="9">
+            <model-viewer
+              src="./3dModels/neptune.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="-50.05deg 73.93deg 4.057m"
+              field-of-view="30deg"
+              auto-rotate
+              style="width: 8vw; height: 8vw"
+              id="neptune-model"
+            >
+            </model-viewer>
+          </div>
+        </div>
+        <div id="planetpanel">
+          <div id="planetpanel_close_button"></div>
+        </div>
+        <div id="welcome_page_banner_hidden_planets">
+          <div class="welcome_page_banner_planet" id="sun">
+            <model-viewer
+              src="./3dModels/Sun.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="1562deg 81.43deg 2029m"
+              field-of-view="30deg"
+              style="width: 28vw; height: 28vw"
+              auto-rotate
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="mercury">
+            <model-viewer
+              src="./3dModels/mercury.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1765deg 86.43deg 54.24m"
+              field-of-view="30deg"
+              style="width: 40vw; height: 40vw"
+              auto-rotate
+              id="mercury-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="venus">
+            <model-viewer
+              src="./3dModels/venus.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1701deg 82.86deg 4.057m"
+              field-of-view="30deg"
+              style="width: 40vw; height: 40vw"
+              id="venus-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="earth">
+            <model-viewer
+              src="./3dModels/earth.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="1480deg 68.92deg 17310m"
+              field-of-view="30deg"
+              style="width: 40vw; height: 40vw"
+              auto-rotate
+              id="earth-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="mars">
+            <model-viewer
+              src="./3dModels/mars.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1648deg 77.86deg 4.047m"
+              field-of-view="30deg"
+              style="width: 40vw; height: 40vw"
+              id="mars-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="jupiter">
+            <model-viewer
+              src="./3dModels/jupiter.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1481deg 86.44deg 4.057m"
+              field-of-view="30deg"
+              style="width: 40vw; height: 40vw"
+              id="jupiter-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="saturn">
+            <model-viewer
+              src="./3dModels/saturn.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              auto-rotate
+              camera-orbit="1410deg 85.42deg 630.3m"
+              field-of-view="30deg"
+              style="width: 40vw; height: 40vw"
+              id="saturn-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="uranus">
+            <model-viewer
+              src="./3dModels/uranus.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="113.3deg 73.62deg 2030m"
+              field-of-view="30deg"
+              auto-rotate
+              style="width: 40vw; height: 40vw"
+              id="uranus-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+          <div class="welcome_page_banner_planet" id="neptune">
+            <model-viewer
+              src="./3dModels/neptune.glb"
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              poster="poster.webp"
+              shadow-intensity="1"
+              camera-orbit="-50.05deg 73.93deg 4.057m"
+              field-of-view="30deg"
+              style="width: 40vw; height: 40vw"
+              id="neptune-model"
+              camera-controls
+            >
+            </model-viewer>
+          </div>
+        </div>
+        <div
+          class="scrollDown"
+          id="welcome_page_banner_scrollDown"
+          style="bottom: 3.5vw"
+          onclick="allTransitionSound(), nowSection('Planets')"
+        >
+          <a href="./index.html#planets">
+            <h3>Scroll Down</h3>
+            <img src="./images/scrollDownImg.png" alt="" id="img" />
+            <img src="./images/scrollDownImg.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="planets">
+      <div id="planets_planet">
+        <div
+          class="scrollDown"
+          style="bottom: -23vh; transform: rotate(180deg)"
+          onclick="allTransitionSound(), nowSection('Home')"
+        >
+          <a href="./index.html#welcome_page">
+            <h3></h3>
+            <img src="./images/scrollDownImg.png" alt="" id="img" />
+            <img src="./images/scrollDownImg.png" alt="" />
+          </a>
+        </div>
+        <model-viewer
+          src="./3dModels/mercury.glb"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          tone-mapping="neutral"
+          poster="poster.webp"
+          shadow-intensity="1"
+          camera-orbit="1480deg 68.92deg 17310m"
+          field-of-view="30deg"
+          auto-rotate
+          style="transition: ease-in-out 500ms"
+          id="planets_planet_mercury"
+        >
+        </model-viewer>
+        <div class="planets_planet_number">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.5em;
+            "
+          >
+            <h1 style="margin: 0; font-size: 5vw">0</h1>
+            <h1
+              style="margin: 0; font-size: 5vw; transition: ease-in-out 500ms"
+              id="planets_planet_planetNumber"
+            >
+              1
+            </h1>
+          </div>
+          <!-- <h1 style="margin: 0" id="planets_planet_planetNumber">01</h1> -->
+          <div>
+            <img
+              src="./images/left-arrow.png"
+              alt=""
+              id="planets_planet_arrowLeft"
+            />
+            <img
+              src="./images/right-arrow.png"
+              alt=""
+              id="planets_planet_arrowRight"
+            />
+          </div>
+        </div>
+        <div class="planets_planet_maincontainer">
+          <div class="planets_planet_maincontainer_div"></div>
+          <div class="planets_planet_maincontainer_div">
+            <p id="planets_planet_article">THE CLOSEST PLANET TO THE SUN</p>
+          </div>
+          <div class="planets_planet_maincontainer_div">
+            <p id="planets_planet_planetName">Mercury</p>
+          </div>
+          <div class="planets_planet_maincontainer_div">
+            <p id="planets_planet_mainTextP">
+              Mercury is the smallest and innermost planet in our solar system.
+              It's a rocky planet, much like Earth, but it's also the fastest,
+              zipping around the sun in just 88 Earth days. Mercury is named
+              after the Roman messenger god, who was known for his speed.
+              <br /><br />
+              It's a scorching hot world, with temperatures reaching over 800
+              degrees Fahrenheit during the day, but plummeting to hundreds of
+              degrees below zero at night. It's a fascinating place, with a
+              cratered surface, a thin atmosphere, and a magnetic field that's
+              only about 1% as strong as Earth's.
+            </p>
+          </div>
+        </div>
+        <div
+          class="scrollDown"
+          style="bottom: -95vh"
+          onclick="allTransitionSound(), nowSection('Missions')"
+        >
+          <a href="./index.html#missions">
+            <h3></h3>
+            <img src="./images/scrollDownImg.png" alt="" id="img" />
+            <img src="./images/scrollDownImg.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="missions">
+      <div
+        class="scrollDown"
+        style="bottom: -125.5vh; transform: rotate(180deg); z-index: 2"
+        onclick="allTransitionSound(), nowSection('Planets')"
+      >
+        <a href="./index.html#planets">
+          <h3></h3>
+          <img src="./images/scrollDownImg.png" alt="" id="img" />
+          <img src="./images/scrollDownImg.png" alt="" />
+        </a>
+      </div>
+      <div id="container">
+        <div id="missions-articlesList">
+          <h1>Missions</h1>
+          <p onclick="missionsNumberChanger(1)" id="missionsList1">
+            1.Discover the Unknown
+          </p>
+          <p onclick="missionsNumberChanger(2)" id="missionsList2">
+            2.Future Expeditions
+          </p>
+          <p onclick="missionsNumberChanger(3)" id="missionsList3">
+            3.Interactive Learning
+          </p>
+          <p onclick="missionsNumberChanger(4)" id="missionsList4">
+            4.Exploring the Solar System
+          </p>
+          <p onclick="missionsNumberChanger(5)" id="missionsList5">
+            5.Space Technologies
+          </p>
+          <p onclick="missionsNumberChanger(6)" id="missionsList6">
+            6.Historical Missions
+          </p>
+          <p onclick="missionsNumberChanger(7)" id="missionsList7">
+            7.Life on Other Planets
+          </p>
+          <p onclick="missionsNumberChanger(8)" id="missionsList8">
+            8.Space and Ecology
+          </p>
+          <p
+            style="
+              position: relative;
+              bottom: -7vw;
+              margin: 0 auto;
+              opacity: 1;
+              font-weight: 600;
+              text-decoration: none;
+              cursor: default;
+            "
+          >
+            Choose the article
+          </p>
+        </div>
+        <div id="missions_maintext">
+          <img
+            src="./images/left-arrow.png"
+            id="missions_arrowLeft"
+            onclick="missionsTextChange(0)"
+          />
+          <div id="missions_maintext_text">
+            <h1>Welcome to the Cosmos!</h1>
+            <li>
+              Prepare for liftoff! This window is your gateway to the wonders of
+              space exploration. Here, you'll find captivating stories of
+              humanity's daring ventures beyond Earth.
+            </li>
+            <li>
+              From the first steps on the Moon to the search for life on Mars,
+              delve into the history, science, and future of space missions.
+              Explore the mysteries of the universe, witness groundbreaking
+              discoveries, and be inspired by the relentless pursuit of
+              knowledge.
+            </li>
+            <li>
+              <strong
+                >Get ready to embark on a journey of cosmic discovery!</strong
+              >
+            </li>
+          </div>
+          <img
+            src="./images/right-arrow.png"
+            id="missions_arrowRight"
+            onclick="missionsTextChange(1)"
+          />
+        </div>
+      </div>
+      <div
+        class="scrollDown"
+        id="planets_planet_scrollDown"
+        style="bottom: -196.5vh"
+        onclick="allTransitionSound(), nowSection('Future')"
+      >
+        <a href="./index.html#future">
+          <h3></h3>
+          <img src="./images/scrollDownImg.png" alt="" id="img" />
+          <img src="./images/scrollDownImg.png" alt="" />
+        </a>
+      </div>
+    </section>
+    <section id="future" style="flex-direction: column">
+      <div
+        class="scrollDown"
+        style="bottom: -222vh; transform: rotate(180deg); z-index: 2"
+        onclick="allTransitionSound(), nowSection('Missions')"
+      >
+        <a href="./index.html#missions">
+          <h3></h3>
+          <img src="./images/scrollDownImg.png" alt="" id="img" />
+          <img src="./images/scrollDownImg.png" alt="" />
+        </a>
+      </div>
+      <div id="future_maintext">
+        <h1>THE FUTURE OF SPACE</h1>
+        <div class="future_maintext_text">
+          <h3>1. Mars Colonization</h3>
+          <li>
+            1.1)Terraforming Mars - Can we transform Mars into a habitable
+            environment?
+          </li>
+          <li>
+            1.2)Preparing for Life on Mars - Exploring the technologies and
+            strategies for human survival on the Red Planet.
+          </li>
+        </div>
+        <div class="future_maintext_text">
+          <h3>Exploring Distant Planets: Venturing Beyond the Familiar .2</h3>
+          <li>
+            Deep Space Probes - Missions that push beyond the solar system’s
+            boundaries. (1.2
+          </li>
+          <li>
+            The Search for New Earths - Discovering exoplanets that could
+            support life. (2.2
+          </li>
+        </div>
+        <div class="future_maintext_text">
+          <h3>3. Space Colonies</h3>
+          <li>
+            3.1)Lunar Bases - The Moon as a stepping stone for future space
+            colonies.
+          </li>
+          <li>
+            3.2)Space Stations of the Future - Developing orbital habitats that
+            support human life.
+          </li>
+        </div>
+      </div>
+      <footer>
+        <div id="footer_logo">
+          <img src="./images/logo.png" alt="" />
+          <p>24.10.2024</p>
+        </div>
+        <div id="footer_links"></div>
+        <div id="footer_quote"></div>
+      </footer>
+    </section>
+    <!-- <section id="footer">
+      <footer>
+        <div id="footer_logo">
+          <img src="./images/logo.png" alt="" />
+          <h1>20.10.2024©️</h1>
+        </div>
+        <div id="footer_navigation">
+          <a
+            href="./index.html#welcome_page"
+            onclick="allTransitionSound(), nowSection('Home')"
+            >HOME</a
+          >
+          <a
+            href="./index.html#planets"
+            onclick="allTransitionSound(), nowSection('Planets')"
+            >PLANETS</a
+          >
+          <a
+            href="./index.html#missions"
+            onclick="allTransitionSound(), nowSection('Missions')"
+            >MISSIONS</a
+          >
+          <a
+            href="./index.html#future"
+            onclick="allTransitionSound(), nowSection('Future')"
+            >THE FUTURE OF SPACE</a
+          >
+        </div>
+        <div id="footer_quote">
+          <hr />
+          <p>
+            Our <strong style="color: aliceblue">home</strong> is a jewel in the
+            cosmos.
+          </p>
+          <p>
+            Cosmic <strong style="color: aliceblue">missions</strong> ignite our
+            curiosity.
+          </p>
+          <p>
+            <strong style="color: aliceblue">Planets</strong> are mysteries
+            waiting to be uncovered.
+          </p>
+          <hr />
+        </div>
+      </footer>
+    </section> -->
+  </body>
+  <script src="./script.js"></script>
+</html>

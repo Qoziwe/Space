@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
+    <title>Beyond The Stars</title>
+  </head>
+  <body>
+    <header id="welcome_page_header">
+      <img src="../images/logo.png" alt="" />
+      <h2 id="nowSection">Registration</h2>
+      <!-- <div id="welcome_page_header_links">
+        <a
+          href="../index.html"
+          class="header_links"
+          onclick="nowSection('Home')"
+          >Home</a
+        >
+        <a
+          href="../index.html#planets"
+          class="header_links"
+          id="link"
+          onclick="nowSection('Planets')"
+          >Planets</a
+        ><a href="" class="header_links" onclick="">Missions</a
+        ><a href="" class="header_links" onclick="">The future of Space</a>
+      </div>
+      <div id="welcome_page_header_registration" onclick="">
+        <p>Registration ㅤ\</p>
+        <img src="/images/authorization.png" alt="" style="width: 0.8vw" />
+        <p>/ ㅤAuthorization</p>
+      </div> -->
+    </header>
+    <section id="registration">
+      <div id="registration_3dmodel">
+        <model-viewer
+          src="../3dModels/millennium_falcon.glb"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          tone-mapping="neutral"
+          poster="poster.webp"
+          shadow-intensity="0"
+          exposure="1.92"
+          shadow-softness="0.57"
+          auto-rotate
+          camera-orbit="2273deg 72.42deg 48.86m"
+          field-of-view="26.26deg"
+          style="width: 100vw; height: 37vw; position: absolute"
+        >
+        </model-viewer>
+      </div>
+      <div id="registration_panel">
+        <h1 id="regH">REGISTRATION</h1>
+        <div id="registration_input_div">
+          <input type="text" placeholder="Your login" id="regInp1" /><input
+            type="text"
+            placeholder="Your email"
+            id="regInp2"
+          /><input type="text" placeholder="Your password" id="regInp3" />
+        </div>
+        <div id="registration_buttons">
+          <button>I already have an account</button><button>Sign up</button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="./script.js"></script>
+</html>

@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background: url(../images/welcome_page_bg.jpeg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 2vw;
+}
+a:hover {
+  scale: 1.2;
+}

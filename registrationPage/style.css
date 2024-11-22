@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+::selection {
+  background: #3b3b3b; /* Safari */
+}
+#registration {
+  width: 100vw;
+  height: 100vh;
+  background: url(../images/moon.jpg);
+  background-position: 0vw -4vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 2fr 2.5fr;
+  align-items: center;
+}
+#registration_panel {
+  height: 45vh;
+  background-color: #16161694;
+  border: solid aliceblue;
+  border-width: 0.01vw 0 0.1vw 0.1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3vw;
+  border-radius: 4vw 0 0 4vw;
+  padding: 5vw;
+  z-index: 2;
+  transition: ease-in-out 500ms;
+  transform: translateX(110vw);
+}
+#registration_panel h1 {
+  margin: 0;
+  font-family: Orbitron;
+  color: aliceblue;
+  font-size: 2.5vw;
+  transform: translateX(110vw);
+  transition: ease-in-out 500ms;
+  user-select: none;
+}
+#registration_3dmodel {
+  /* height: 80vw; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50vw);
+  transition: ease-in-out 500ms;
+}
+#registration_input_div {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+#registration_input_div input {
+  background-color: aqua;
+  width: 28vw;
+  height: 6vh;
+  padding: 0 1vw 0 1vw;
+  font-size: 0.9vw;
+  border-radius: 1vw;
+  background-color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  border-left: 0.2vw solid rgb(19, 19, 19);
+  border-top: 0.2vw solid rgb(19, 19, 19);
+  border-right: 0.2vw solid rgb(46, 46, 46);
+  border-bottom: 0.2vw solid rgb(46, 46, 46);
+  transform: translateX(110vw);
+  transition: ease-in-out 500ms;
+}
+#registration_input_div input,
+textarea {
+  background-color: rgba(0, 0, 0, 0.151);
+  text-align: end;
+  color: aliceblue;
+}
+#registration_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(110vw);
+  transition: ease-in-out 500ms;
+}
+#registration_buttons button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+#registration_buttons button {
+  background-color: aliceblue;
+  border: 0;
+  color: aliceblue;
+  font-family: Orbitron;
+  padding: 0;
+}
+#registration_buttons button:nth-child(1) {
+  width: 8vw;
+  height: 4vw;
+  border-radius: 0.7vw 0 0 0.7vw;
+  background-color: #232323;
+  font-size: 0.7vw;
+}
+#registration_buttons button:nth-child(2) {
+  width: 15vw;
+  height: 4vw;
+  font-size: 1.5vw;
+  border-radius: 0 0.7vw 0.7vw 0;
+  /* border-left: 0.01vw solid black; */
+  background-color: #424242;
+}
+#welcome_page_header {
+  height: 7vw;
+  width: 100vw;
+  background: linear-gradient(
+    180deg,
+    rgba(32, 32, 32, 1) 0%,
+    rgba(32, 32, 32, 0.923406862745098) 22%,
+    rgba(32, 32, 32, 0.8169642857142857) 35%,
+    rgba(32, 32, 32, 0.6096813725490196) 56%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 2vw 2vw 2vw;
+  gap: 3vw;
+  font-family: Orbitron;
+  user-select: none;
+  position: fixed;
+  z-index: 2;
+}
+#welcome_page_header img {
+  width: 8vw;
+  opacity: 0.95;
+}
+#welcome_page_header h2 {
+  color: aliceblue;
+  border: 0.2vw solid rgba(240, 248, 255, 0.767);
+  border-radius: 1vw;
+  padding: 0.5vw 1vw 0.5vw 1vw;
+  font-size: 1.3vw;
+}
+#welcome_page_header_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin-left: 20vw;
+  opacity: 0.6;
+}
+#welcome_page_header_links a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 0.85vw;
+  cursor: pointer;
+}
+#welcome_page_header_links a:hover {
+  text-decoration: 0.2vw overline;
+}
+#welcome_page_header_registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3vw;
+}
+#welcome_page_header_registration p {
+  color: rgba(240, 248, 255, 0.788);
+  font-size: 0.9vw;
+}
+#welcome_page_header_registration p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
