@@ -252,9 +252,9 @@ window.onload = function () {
 };
 
 var ambient = new Audio("./sounds/ambient.mp3");
-document.getElementById("music_agree_button").onclick = function () {
+if (confirm("Do you want to continue with musical accompaniment?")) {
   ambient.play();
-};
+}
 
 var allTransition = new Audio("./sounds/all-transition.mp3");
 function allTransitionSound() {

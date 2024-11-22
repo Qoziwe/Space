@@ -4,7 +4,7 @@ html {
 body {
   margin: 0;
   /* background-color: rgb(0, 0, 0); */
-  /* overflow: hidden; */
+  overflow: hidden;
   behavior: smooth;
 }
 ::selection {
@@ -118,7 +118,6 @@ body {
   font-family: monospace;
   position: fixed;
   opacity: 10;
-  display: none;
 }
 #readme h1 {
   font-size: 3vw;
@@ -143,11 +142,6 @@ body {
   background-color: #474747;
   color: aliceblue;
   cursor: pointer;
-}
-#readme button:nth-child(2) {
-  width: 10vw;
-  height: 3vw;
-  font-size: 0.8vw;
 }
 
 /* WELCOMEPAGE */
@@ -618,7 +612,7 @@ body {
   align-items: center;
   /* background-color: #0f0f0f; */
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(./images/future_bg.png);
+    url(https://cdn1.ozone.ru/s3/multimedia-2/6295532894.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -631,7 +625,7 @@ body {
   flex-direction: column;
   color: aliceblue;
   font-family: Orbitron;
-  gap: 2vw;
+  gap: 1.8vw;
   padding: 1vw;
 }
 #future_maintext h1 {
@@ -645,7 +639,6 @@ body {
 }
 .future_maintext_text:nth-child(3) {
   text-align: end;
-  margin-top: 1vw;
 }
 .future_maintext_text h3 {
   margin: 0;
@@ -662,8 +655,8 @@ body {
 
 /* FOOTER */
 #footer {
-  height: 13vw;
-  background-color: rgb(15, 15, 15);
+  height: 24vh;
+  background-color: rgba(15, 15, 15, 0.637);
   position: relative;
   bottom: 24vh;
 }
@@ -679,10 +672,9 @@ body {
 #footer_logo h1 {
   margin: 0;
   color: rgba(240, 248, 255, 0.863);
-  font-size: 1vw;
+  font-size: 1.4vw;
   margin-top: 0.5vw;
   font-family: "Orbitron";
-  font-weight: 100;
 }
 footer div {
   /* border: 0.01vw solid aliceblue; */
@@ -701,12 +693,9 @@ footer div {
   color: aliceblue;
   font-family: Orbitron;
   font-weight: 400;
-  font-size: 1vw;
+  font-size: 1.3vw;
   opacity: 0.95;
   margin-left: 1vw;
-}
-#footer_navigation a:hover {
-  text-decoration: overline;
 }
 #footer_quote {
   align-items: end;
